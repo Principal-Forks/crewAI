@@ -1,0 +1,245 @@
+version: "1.0.0"
+name: "CrewAI Component Library"
+
+nodeComponents:
+  # Core Orchestration Components
+  Crew:
+    color: "#4A90E2"
+    description: "Orchestrates multiple agents and tasks with memory and knowledge systems"
+
+  Flow:
+    color: "#7B68EE"
+    description: "Event-driven workflow system with conditional execution and state management"
+
+  # Agent Components
+  Agent:
+    color: "#50C878"
+    description: "Autonomous AI agent with role, goal, backstory, and capabilities"
+
+  ManagerAgent:
+    color: "#2E8B57"
+    description: "Special agent that coordinates other agents in hierarchical process"
+
+  # Task Components
+  Task:
+    color: "#FF6B6B"
+    description: "Work unit with description, expected output, and assigned agent"
+
+  ConditionalTask:
+    color: "#FF8C94"
+    description: "Task with conditional execution based on previous task results"
+
+  # LLM Components
+  LLM:
+    color: "#9B59B6"
+    description: "Language model (OpenAI, Claude, Gemini, etc.) used by agents"
+
+  # Tool Components
+  Tool:
+    color: "#F39C12"
+    description: "Utility that agents can use to perform specific actions"
+
+  DelegateWorkTool:
+    color: "#E67E22"
+    description: "Built-in tool for delegating work to other agents"
+
+  AskQuestionTool:
+    color: "#E67E22"
+    description: "Built-in tool for asking questions to other agents"
+
+  MCPTool:
+    color: "#D35400"
+    description: "Tool provided via Model Context Protocol server"
+
+  # Memory Components
+  ShortTermMemory:
+    color: "#3498DB"
+    description: "Current session memory for fast access during execution"
+
+  LongTermMemory:
+    color: "#2980B9"
+    description: "Persistent historical memory across sessions"
+
+  EntityMemory:
+    color: "#1ABC9C"
+    description: "Entity relationships and metadata storage"
+
+  ExternalMemory:
+    color: "#16A085"
+    description: "Custom external storage backend integration"
+
+  ContextualMemory:
+    color: "#5DADE2"
+    description: "Context-aware memory system for agents"
+
+  # Knowledge Components
+  KnowledgeSource:
+    color: "#E74C3C"
+    description: "Source of knowledge (files, websites, APIs)"
+
+  VectorStore:
+    color: "#C0392B"
+    description: "Vector database for embeddings (ChromaDB, Qdrant)"
+
+  Knowledge:
+    color: "#E84A5F"
+    description: "Collection of knowledge sources with search capabilities"
+
+  # Storage Components
+  SQLiteStorage:
+    color: "#95A5A6"
+    description: "SQLite storage backend for memory persistence"
+
+  RAGStorage:
+    color: "#7F8C8D"
+    description: "RAG-based vector storage for retrieval"
+
+  # Event System
+  EventBus:
+    color: "#34495E"
+    description: "Central event bus for pub-sub architecture"
+
+  # MCP Components
+  MCPServer:
+    color: "#8E44AD"
+    description: "Model Context Protocol server providing tools and resources"
+
+  # Process Components
+  SequentialProcess:
+    color: "#1E88E5"
+    description: "Sequential task execution process"
+
+  HierarchicalProcess:
+    color: "#1565C0"
+    description: "Hierarchical process with manager agent coordination"
+
+  # Output Components
+  CrewOutput:
+    color: "#26A69A"
+    description: "Final output from crew execution with usage metrics"
+
+  TaskOutput:
+    color: "#00897B"
+    description: "Output from individual task execution"
+
+edgeComponents:
+  # Execution Relationships
+  Executes:
+    color: "#4A90E2"
+    description: "Crew/Agent executes Task"
+    style: "solid"
+
+  ExecutesSequentially:
+    color: "#1E88E5"
+    description: "Tasks executed in sequence"
+    style: "solid"
+
+  Manages:
+    color: "#2E8B57"
+    description: "Manager agent coordinates other agents"
+    style: "dashed"
+
+  # Tool Usage
+  UsesTool:
+    color: "#F39C12"
+    description: "Agent/Task uses a tool"
+    style: "solid"
+
+  DelegatesTo:
+    color: "#E67E22"
+    description: "Agent delegates work to another agent"
+    style: "dotted"
+
+  AsksQuestion:
+    color: "#E67E22"
+    description: "Agent asks question to another agent"
+    style: "dotted"
+
+  # LLM Relationships
+  UsesLLM:
+    color: "#9B59B6"
+    description: "Agent uses language model"
+    style: "solid"
+
+  # Memory Relationships
+  HasMemory:
+    color: "#3498DB"
+    description: "Agent/Crew has memory system"
+    style: "solid"
+
+  StoresIn:
+    color: "#95A5A6"
+    description: "Memory stores data in storage backend"
+    style: "solid"
+
+  # Knowledge Relationships
+  HasKnowledge:
+    color: "#E74C3C"
+    description: "Agent/Crew has access to knowledge"
+    style: "solid"
+
+  QueriesKnowledge:
+    color: "#E84A5F"
+    description: "Agent queries knowledge source"
+    style: "dashed"
+
+  UsesVectorStore:
+    color: "#C0392B"
+    description: "Knowledge uses vector store for embeddings"
+    style: "solid"
+
+  # Task Dependencies
+  DependsOn:
+    color: "#FF8C94"
+    description: "Task depends on output of another task"
+    style: "dashed"
+
+  ConditionallyExecutes:
+    color: "#FF8C94"
+    description: "Conditional task execution based on criteria"
+    style: "dotted"
+
+  # Event Relationships
+  EmitsEvent:
+    color: "#34495E"
+    description: "Component emits events to event bus"
+    style: "dotted"
+
+  ListensToEvent:
+    color: "#34495E"
+    description: "Component listens to events from event bus"
+    style: "dotted"
+
+  # MCP Relationships
+  ConnectsToMCP:
+    color: "#8E44AD"
+    description: "Agent connects to MCP server"
+    style: "dashed"
+
+  ProvidesMCPTool:
+    color: "#D35400"
+    description: "MCP server provides tool to agent"
+    style: "solid"
+
+  # Output Relationships
+  Produces:
+    color: "#26A69A"
+    description: "Task/Crew produces output"
+    style: "solid"
+
+  # Process Relationships
+  UsesProcess:
+    color: "#1E88E5"
+    description: "Crew uses execution process"
+    style: "solid"
+
+  # Flow Relationships
+  FlowsTo:
+    color: "#7B68EE"
+    description: "Flow transitions to another state"
+    style: "solid"
+
+  TriggersFlow:
+    color: "#7B68EE"
+    description: "Event triggers flow execution"
+    style: "dashed"

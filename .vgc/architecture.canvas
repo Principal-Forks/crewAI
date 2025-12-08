@@ -1,0 +1,633 @@
+{
+  "vv": {
+    "name": "CrewAI Research System",
+    "version": "1.0.0",
+    "nodeTypes": {
+      "Crew": {
+        "shape": "rectangle",
+        "color": "#4A90E2"
+      },
+      "Flow": {
+        "shape": "rectangle",
+        "color": "#7B68EE"
+      },
+      "Agent": {
+        "shape": "rectangle",
+        "color": "#50C878"
+      },
+      "ManagerAgent": {
+        "shape": "rectangle",
+        "color": "#2E8B57"
+      },
+      "Task": {
+        "shape": "rectangle",
+        "color": "#FF6B6B"
+      },
+      "ConditionalTask": {
+        "shape": "rectangle",
+        "color": "#FF8C94"
+      },
+      "LLM": {
+        "shape": "ellipse",
+        "color": "#9B59B6"
+      },
+      "Tool": {
+        "shape": "hexagon",
+        "color": "#F39C12"
+      },
+      "DelegateWorkTool": {
+        "shape": "hexagon",
+        "color": "#E67E22"
+      },
+      "AskQuestionTool": {
+        "shape": "hexagon",
+        "color": "#E67E22"
+      },
+      "MCPTool": {
+        "shape": "hexagon",
+        "color": "#D35400"
+      },
+      "ShortTermMemory": {
+        "shape": "rectangle",
+        "color": "#3498DB"
+      },
+      "LongTermMemory": {
+        "shape": "rectangle",
+        "color": "#2980B9"
+      },
+      "EntityMemory": {
+        "shape": "rectangle",
+        "color": "#1ABC9C"
+      },
+      "ExternalMemory": {
+        "shape": "rectangle",
+        "color": "#16A085"
+      },
+      "ContextualMemory": {
+        "shape": "rectangle",
+        "color": "#5DADE2"
+      },
+      "KnowledgeSource": {
+        "shape": "document",
+        "color": "#E74C3C"
+      },
+      "VectorStore": {
+        "shape": "cylinder",
+        "color": "#C0392B"
+      },
+      "Knowledge": {
+        "shape": "rectangle",
+        "color": "#E84A5F"
+      },
+      "SQLiteStorage": {
+        "shape": "cylinder",
+        "color": "#95A5A6"
+      },
+      "RAGStorage": {
+        "shape": "cylinder",
+        "color": "#7F8C8D"
+      },
+      "EventBus": {
+        "shape": "ellipse",
+        "color": "#34495E"
+      },
+      "MCPServer": {
+        "shape": "rectangle",
+        "color": "#8E44AD"
+      },
+      "SequentialProcess": {
+        "shape": "rectangle",
+        "color": "#1E88E5"
+      },
+      "HierarchicalProcess": {
+        "shape": "rectangle",
+        "color": "#1565C0"
+      },
+      "CrewOutput": {
+        "shape": "rectangle",
+        "color": "#26A69A"
+      },
+      "TaskOutput": {
+        "shape": "rectangle",
+        "color": "#00897B"
+      }
+    },
+    "edgeTypes": {
+      "Executes": {
+        "color": "#4A90E2"
+      },
+      "ExecutesSequentially": {
+        "color": "#1E88E5"
+      },
+      "Manages": {
+        "color": "#2E8B57"
+      },
+      "UsesTool": {
+        "color": "#F39C12"
+      },
+      "DelegatesTo": {
+        "color": "#E67E22"
+      },
+      "AsksQuestion": {
+        "color": "#E67E22"
+      },
+      "UsesLLM": {
+        "color": "#9B59B6"
+      },
+      "HasMemory": {
+        "color": "#3498DB"
+      },
+      "StoresIn": {
+        "color": "#95A5A6"
+      },
+      "HasKnowledge": {
+        "color": "#E74C3C"
+      },
+      "QueriesKnowledge": {
+        "color": "#E84A5F"
+      },
+      "UsesVectorStore": {
+        "color": "#C0392B"
+      },
+      "DependsOn": {
+        "color": "#FF8C94"
+      },
+      "ConditionallyExecutes": {
+        "color": "#FF8C94"
+      },
+      "EmitsEvent": {
+        "color": "#34495E"
+      },
+      "ListensToEvent": {
+        "color": "#34495E"
+      },
+      "ConnectsToMCP": {
+        "color": "#8E44AD"
+      },
+      "ProvidesMCPTool": {
+        "color": "#D35400"
+      },
+      "Produces": {
+        "color": "#26A69A"
+      },
+      "UsesProcess": {
+        "color": "#1E88E5"
+      },
+      "FlowsTo": {
+        "color": "#7B68EE"
+      },
+      "TriggersFlow": {
+        "color": "#7B68EE"
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "crew1",
+      "type": "text",
+      "label": "Research Crew",
+      "x": -46,
+      "y": -24,
+      "width": 120,
+      "height": 60,
+      "vv": {
+        "nodeType": "Crew",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "sequential_process",
+      "type": "text",
+      "label": "Sequential Execution",
+      "x": -578,
+      "y": 310,
+      "width": 140,
+      "height": 50,
+      "vv": {
+        "nodeType": "SequentialProcess",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "agent1",
+      "type": "text",
+      "label": "Researcher Agent",
+      "x": 381,
+      "y": -189,
+      "width": 130,
+      "height": 60,
+      "vv": {
+        "nodeType": "Agent",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "agent2",
+      "type": "text",
+      "label": "Writer Agent",
+      "x": 642,
+      "y": -36,
+      "width": 110,
+      "height": 60,
+      "vv": {
+        "nodeType": "Agent",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "llm1",
+      "type": "text",
+      "label": "GPT-4",
+      "x": 143,
+      "y": -33,
+      "width": 80,
+      "height": 50,
+      "vv": {
+        "nodeType": "LLM",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "llm2",
+      "type": "text",
+      "label": "Claude",
+      "x": 658,
+      "y": 185,
+      "width": 80,
+      "height": 50,
+      "vv": {
+        "nodeType": "LLM",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "task1",
+      "type": "text",
+      "label": "Research Task",
+      "x": 111,
+      "y": 439,
+      "width": 110,
+      "height": 50,
+      "vv": {
+        "nodeType": "Task",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "task2",
+      "type": "text",
+      "label": "Writing Task",
+      "x": 115,
+      "y": 187,
+      "width": 100,
+      "height": 50,
+      "vv": {
+        "nodeType": "Task",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "tool1",
+      "type": "text",
+      "label": "Web Search Tool",
+      "x": 285,
+      "y": -36,
+      "width": 120,
+      "height": 50,
+      "vv": {
+        "nodeType": "Tool",
+        "shape": "hexagon"
+      }
+    },
+    {
+      "id": "tool2",
+      "type": "text",
+      "label": "File Writer Tool",
+      "x": 785,
+      "y": 184,
+      "width": 120,
+      "height": 50,
+      "vv": {
+        "nodeType": "Tool",
+        "shape": "hexagon"
+      }
+    },
+    {
+      "id": "delegate_tool",
+      "type": "text",
+      "label": "Delegate Work",
+      "x": 484,
+      "y": -36,
+      "width": 110,
+      "height": 50,
+      "vv": {
+        "nodeType": "DelegateWorkTool",
+        "shape": "hexagon"
+      }
+    },
+    {
+      "id": "short_term_memory",
+      "type": "text",
+      "label": "Session Memory",
+      "x": -237,
+      "y": 309,
+      "width": 120,
+      "height": 50,
+      "vv": {
+        "nodeType": "ShortTermMemory",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "long_term_memory",
+      "type": "text",
+      "label": "Historical Memory",
+      "x": -70,
+      "y": 309,
+      "width": 130,
+      "height": 50,
+      "vv": {
+        "nodeType": "LongTermMemory",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "sqlite_storage",
+      "type": "text",
+      "label": "SQLite DB",
+      "x": -63,
+      "y": 514,
+      "width": 90,
+      "height": 50,
+      "vv": {
+        "nodeType": "SQLiteStorage",
+        "shape": "cylinder"
+      }
+    },
+    {
+      "id": "knowledge1",
+      "type": "text",
+      "label": "Research Knowledge",
+      "x": 379,
+      "y": 309,
+      "width": 140,
+      "height": 50,
+      "vv": {
+        "nodeType": "Knowledge",
+        "shape": "rectangle"
+      }
+    },
+    {
+      "id": "knowledge_source1",
+      "type": "text",
+      "label": "Documentation Files",
+      "x": 271,
+      "y": 512,
+      "width": 140,
+      "height": 50,
+      "vv": {
+        "nodeType": "KnowledgeSource",
+        "shape": "document"
+      }
+    },
+    {
+      "id": "vector_store",
+      "type": "text",
+      "label": "ChromaDB",
+      "x": 518,
+      "y": 510,
+      "width": 100,
+      "height": 50,
+      "vv": {
+        "nodeType": "VectorStore",
+        "shape": "cylinder"
+      }
+    },
+    {
+      "id": "event_bus",
+      "type": "text",
+      "label": "Event Bus",
+      "x": 322,
+      "y": 202,
+      "width": 90,
+      "height": 50,
+      "vv": {
+        "nodeType": "EventBus",
+        "shape": "ellipse"
+      }
+    },
+    {
+      "id": "crew_output",
+      "type": "text",
+      "label": "Final Output",
+      "x": -380,
+      "y": 312,
+      "width": 100,
+      "height": 50,
+      "vv": {
+        "nodeType": "CrewOutput",
+        "shape": "rectangle"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge1",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "sequential_process",
+      "vv": {
+        "edgeType": "UsesProcess"
+      }
+    },
+    {
+      "id": "edge2",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "task1",
+      "vv": {
+        "edgeType": "Executes"
+      }
+    },
+    {
+      "id": "edge3",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "task2",
+      "vv": {
+        "edgeType": "Executes"
+      }
+    },
+    {
+      "id": "edge4",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "task1",
+      "vv": {
+        "edgeType": "Executes"
+      }
+    },
+    {
+      "id": "edge5",
+      "type": "arrow",
+      "fromNode": "agent2",
+      "toNode": "task2",
+      "vv": {
+        "edgeType": "Executes"
+      }
+    },
+    {
+      "id": "edge6",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "llm1",
+      "vv": {
+        "edgeType": "UsesLLM"
+      }
+    },
+    {
+      "id": "edge7",
+      "type": "arrow",
+      "fromNode": "agent2",
+      "toNode": "llm2",
+      "vv": {
+        "edgeType": "UsesLLM"
+      }
+    },
+    {
+      "id": "edge8",
+      "type": "arrow",
+      "fromNode": "task2",
+      "toNode": "task1",
+      "vv": {
+        "edgeType": "DependsOn"
+      }
+    },
+    {
+      "id": "edge9",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "tool1",
+      "vv": {
+        "edgeType": "UsesTool"
+      }
+    },
+    {
+      "id": "edge10",
+      "type": "arrow",
+      "fromNode": "agent2",
+      "toNode": "tool2",
+      "vv": {
+        "edgeType": "UsesTool"
+      }
+    },
+    {
+      "id": "edge11",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "delegate_tool",
+      "vv": {
+        "edgeType": "UsesTool"
+      }
+    },
+    {
+      "id": "edge12",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "agent2",
+      "vv": {
+        "edgeType": "DelegatesTo"
+      }
+    },
+    {
+      "id": "edge13",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "short_term_memory",
+      "vv": {
+        "edgeType": "HasMemory"
+      }
+    },
+    {
+      "id": "edge14",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "long_term_memory",
+      "vv": {
+        "edgeType": "HasMemory"
+      }
+    },
+    {
+      "id": "edge15",
+      "type": "arrow",
+      "fromNode": "long_term_memory",
+      "toNode": "sqlite_storage",
+      "vv": {
+        "edgeType": "StoresIn"
+      }
+    },
+    {
+      "id": "edge16",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "knowledge1",
+      "vv": {
+        "edgeType": "HasKnowledge"
+      }
+    },
+    {
+      "id": "edge17",
+      "type": "arrow",
+      "fromNode": "knowledge1",
+      "toNode": "knowledge_source1",
+      "vv": {
+        "edgeType": "QueriesKnowledge"
+      }
+    },
+    {
+      "id": "edge18",
+      "type": "arrow",
+      "fromNode": "knowledge1",
+      "toNode": "vector_store",
+      "vv": {
+        "edgeType": "UsesVectorStore"
+      }
+    },
+    {
+      "id": "edge19",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "event_bus",
+      "vv": {
+        "edgeType": "EmitsEvent"
+      }
+    },
+    {
+      "id": "edge20",
+      "type": "arrow",
+      "fromNode": "agent1",
+      "toNode": "event_bus",
+      "vv": {
+        "edgeType": "EmitsEvent"
+      }
+    },
+    {
+      "id": "edge21",
+      "type": "arrow",
+      "fromNode": "agent2",
+      "toNode": "event_bus",
+      "vv": {
+        "edgeType": "EmitsEvent"
+      }
+    },
+    {
+      "id": "edge22",
+      "type": "arrow",
+      "fromNode": "crew1",
+      "toNode": "crew_output",
+      "vv": {
+        "edgeType": "Produces"
+      }
+    }
+  ]
+}
