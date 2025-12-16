@@ -252,7 +252,9 @@
     {
       "id": "edge1",
       "fromNode": "crew1",
+      "fromSide": "right",
       "toNode": "sequential_process",
+      "toSide": "left",
       "pv": {
         "edgeType": "UsesProcess"
       }
@@ -260,7 +262,9 @@
     {
       "id": "edge2",
       "fromNode": "crew1",
+      "fromSide": "right",
       "toNode": "task1",
+      "toSide": "left",
       "pv": {
         "edgeType": "Executes"
       }
@@ -268,7 +272,9 @@
     {
       "id": "edge3",
       "fromNode": "crew1",
+      "fromSide": "right",
       "toNode": "task2",
+      "toSide": "left",
       "pv": {
         "edgeType": "Executes"
       }
@@ -276,7 +282,9 @@
     {
       "id": "edge4",
       "fromNode": "agent1",
+      "fromSide": "left",
       "toNode": "task1",
+      "toSide": "right",
       "pv": {
         "edgeType": "Executes"
       }
@@ -284,7 +292,9 @@
     {
       "id": "edge5",
       "fromNode": "agent2",
+      "fromSide": "left",
       "toNode": "task2",
+      "toSide": "right",
       "pv": {
         "edgeType": "Executes"
       }
@@ -292,7 +302,9 @@
     {
       "id": "edge6",
       "fromNode": "agent1",
+      "fromSide": "bottom",
       "toNode": "llm1",
+      "toSide": "top",
       "pv": {
         "edgeType": "UsesLLM"
       }
@@ -300,7 +312,9 @@
     {
       "id": "edge7",
       "fromNode": "agent2",
+      "fromSide": "bottom",
       "toNode": "llm2",
+      "toSide": "top",
       "pv": {
         "edgeType": "UsesLLM"
       }
@@ -308,7 +322,9 @@
     {
       "id": "edge8",
       "fromNode": "task2",
+      "fromSide": "bottom",
       "toNode": "task1",
+      "toSide": "top",
       "pv": {
         "edgeType": "DependsOn"
       }
@@ -316,7 +332,9 @@
     {
       "id": "edge9",
       "fromNode": "agent1",
+      "fromSide": "right",
       "toNode": "tool1",
+      "toSide": "left",
       "pv": {
         "edgeType": "UsesTool"
       }
@@ -324,7 +342,9 @@
     {
       "id": "edge10",
       "fromNode": "agent2",
+      "fromSide": "right",
       "toNode": "tool2",
+      "toSide": "left",
       "pv": {
         "edgeType": "UsesTool"
       }
@@ -332,7 +352,9 @@
     {
       "id": "edge11",
       "fromNode": "agent1",
+      "fromSide": "right",
       "toNode": "delegate_tool",
+      "toSide": "left",
       "pv": {
         "edgeType": "UsesTool"
       }
@@ -340,7 +362,9 @@
     {
       "id": "edge12",
       "fromNode": "agent1",
+      "fromSide": "right",
       "toNode": "agent2",
+      "toSide": "left",
       "pv": {
         "edgeType": "DelegatesTo"
       }
@@ -348,7 +372,9 @@
     {
       "id": "edge13",
       "fromNode": "crew1",
+      "fromSide": "bottom",
       "toNode": "short_term_memory",
+      "toSide": "top",
       "pv": {
         "edgeType": "HasMemory"
       }
@@ -356,7 +382,9 @@
     {
       "id": "edge14",
       "fromNode": "crew1",
+      "fromSide": "bottom",
       "toNode": "long_term_memory",
+      "toSide": "top",
       "pv": {
         "edgeType": "HasMemory"
       }
@@ -364,7 +392,9 @@
     {
       "id": "edge15",
       "fromNode": "long_term_memory",
+      "fromSide": "bottom",
       "toNode": "sqlite_storage",
+      "toSide": "top",
       "pv": {
         "edgeType": "StoresIn"
       }
@@ -372,7 +402,9 @@
     {
       "id": "edge16",
       "fromNode": "agent1",
+      "fromSide": "right",
       "toNode": "knowledge1",
+      "toSide": "left",
       "pv": {
         "edgeType": "HasKnowledge"
       }
@@ -380,7 +412,9 @@
     {
       "id": "edge17",
       "fromNode": "knowledge1",
+      "fromSide": "bottom",
       "toNode": "knowledge_source1",
+      "toSide": "top",
       "pv": {
         "edgeType": "QueriesKnowledge"
       }
@@ -388,7 +422,9 @@
     {
       "id": "edge18",
       "fromNode": "knowledge1",
+      "fromSide": "bottom",
       "toNode": "vector_store",
+      "toSide": "top",
       "pv": {
         "edgeType": "UsesVectorStore"
       }
@@ -396,7 +432,9 @@
     {
       "id": "edge19",
       "fromNode": "crew1",
+      "fromSide": "bottom",
       "toNode": "event_bus",
+      "toSide": "left",
       "pv": {
         "edgeType": "EmitsEvent"
       }
@@ -404,7 +442,9 @@
     {
       "id": "edge20",
       "fromNode": "agent1",
+      "fromSide": "left",
       "toNode": "event_bus",
+      "toSide": "right",
       "pv": {
         "edgeType": "EmitsEvent"
       }
@@ -412,7 +452,9 @@
     {
       "id": "edge21",
       "fromNode": "agent2",
+      "fromSide": "left",
       "toNode": "event_bus",
+      "toSide": "right",
       "pv": {
         "edgeType": "EmitsEvent"
       }
@@ -420,7 +462,9 @@
     {
       "id": "edge22",
       "fromNode": "crew1",
+      "fromSide": "right",
       "toNode": "crew_output",
+      "toSide": "left",
       "pv": {
         "edgeType": "Produces"
       }
